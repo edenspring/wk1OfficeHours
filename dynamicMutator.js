@@ -16,7 +16,10 @@ and three optional parameters. The function should be written to handle these me
     - After inserting something in as the new 0th element, return mutated array
 * slice
     - Utilize the first and second optional parameters to specify a beginning and ending index
-    - return the result of calling splice on the given array with the specified indices
+    - return the result of calling slice on the given array with the specified indices
+
+    *** NOTE: this will return a new array and not mutate the original
+
 * splice
     - Utilize all optional parameters to specify:
         - start index
@@ -24,4 +27,18 @@ and three optional parameters. The function should be written to handle these me
         - what to add in
     - Return the result of calling the splice operation with the supplied arguments
 */
+
+function dynamicMutator(arr, method, op1, op2, op3) {
+
+}
+
+
+let array1 = [1, 2, 3, 4]
+
+console.log(dynamicMutator(array1, "pop")) // [1,2,3]
+console.log(dynamicMutator(array1, "shift")) // [2,3]
+console.log(dynamicMutator(array1,"push", 1)) // [2,3,1]
+console.log(dynamicMutator(array1,"unshift", 4)) // [4,2,3,1]
+console.log(dynamicMutator(array1, "slice", 1,3)) // [2,3]
+console.log(dynamicMutator(array1, "splice", 0,4,"You've been spliced!")) //["You've been spliced!"]
 
