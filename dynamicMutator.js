@@ -31,28 +31,7 @@ If an invalid method has been passed as an argument, return "INVALID METHOD"
 */
 
 function dynamicMutator(arr, method, op1, op2, op3) {
-    if (method === 'pop') {
-        arr.pop()
-        return arr;
-    }
-    else if (method === 'shift') {
-        arr.shift();
-        return arr;
-    }
-    else if (method === 'push') {
-        arr.push(op1)
-        return arr;
-    }
-    else if (method === 'unshift') { 
-        arr.unshift(op1)
-        return arr;
-    }
-    else if (method === 'slice') return arr.slice(op1, op2)
-    else if (method === 'splice'){
-        arr.splice(op1, op2, op3)
-        return arr;
-    }
-        return "INVALID METHOD"
+   
 }
 
 
