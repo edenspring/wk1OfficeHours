@@ -26,10 +26,33 @@ and three optional parameters. The function should be written to handle these me
         - how many things to remove
         - what to add in
     - Return the result of calling the splice operation with the supplied arguments
+
+If an invalid method has been passed as an argument, return "INVALID METHOD"
 */
 
 function dynamicMutator(arr, method, op1, op2, op3) {
-
+    if (method === 'pop') {
+        arr.pop()
+        return arr;
+    }
+    else if (method === 'shift') {
+        arr.shift();
+        return arr;
+    }
+    else if (method === 'push') {
+        arr.push(op1)
+        return arr;
+    }
+    else if (method === 'unshift') { 
+        arr.unshift(op1)
+        return arr;
+    }
+    else if (method === 'slice') return arr.slice(op1, op2)
+    else if (method === 'splice'){
+        arr.splice(op1, op2, op3)
+        return arr;
+    }
+        return "INVALID METHOD"
 }
 
 
@@ -37,8 +60,8 @@ let array1 = [1, 2, 3, 4]
 
 console.log(dynamicMutator(array1, "pop")) // [1,2,3]
 console.log(dynamicMutator(array1, "shift")) // [2,3]
-console.log(dynamicMutator(array1,"push", 1)) // [2,3,1]
-console.log(dynamicMutator(array1,"unshift", 4)) // [4,2,3,1]
-console.log(dynamicMutator(array1, "slice", 1,3)) // [2,3]
-console.log(dynamicMutator(array1, "splice", 0,4,"You've been spliced!")) //["You've been spliced!"]
+console.log(dynamicMutator(array1, "push", 1)) // [2,3,1]
+console.log(dynamicMutator(array1, "unshift", 4)) // [4,2,3,1]
+console.log(dynamicMutator(array1, "slice", 1, 3)) // [2,3]
+console.log(dynamicMutator(array1, "splice", 0, 4, "You've been spliced!")) //["You've been spliced!"]
 
